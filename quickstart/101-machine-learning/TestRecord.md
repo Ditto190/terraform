@@ -1,3 +1,61 @@
+## 10 May 26 01:08 UTC
+
+Success: false
+
+### Versions
+
+Terraform v1.14.8
+on linux_amd64
++ provider registry.terraform.io/hashicorp/azurerm v3.117.1
++ provider registry.terraform.io/hashicorp/random v3.8.1
+
+### Error
+
+Error:
+	Error Trace:	/home/runtimeuser/go/pkg/mod/github.com/gruntwork-io/terratest@v0.48.1/modules/terraform/apply.go:34
+	            				/home/runtimeuser/go/pkg/mod/github.com/!azure/terraform-module-test-helper@v0.31.0/e2etest.go:111
+	            				/home/runtimeuser/go/pkg/mod/github.com/!azure/terraform-module-test-helper@v0.31.0/e2etest.go:91
+	            				/home/runtimeuser/go/pkg/mod/github.com/!azure/terraform-module-test-helper@v0.31.0/e2etest.go:59
+	            				/home/runtimeuser/go/pkg/mod/github.com/!azure/terraform-module-test-helper@v0.31.0/e2etest.go:55
+	            				/src/test/e2e/quickstart_test.go:50
+	Error:      	Received unexpected error:
+	            	FatalError{Underlying: error while running command: exit status 1; [31m╷[0m[0m
+	            	[31m│[0m [0m[1m[31mError: [0m[0m[1mwaiting for creation of Machine Learning Compute (Subscription: "cb563ee9-7df0-468e-81d5-166968d1f89a"
+	            	[31m│[0m [0mResource Group Name: "ml-crucial-penguin-rg"
+	            	[31m│[0m [0mWorkspace Name: "ml-crucial-penguin-mlw"
+	            	[31m│[0m [0mCompute Name: "ugmbnwpsinstance"): polling failed: the Azure API returned the following error:
+	            	[31m│[0m [0m
+	            	[31m│[0m [0mStatus: "BadRequest"
+	            	[31m│[0m [0mCode: ""
+	            	[31m│[0m [0mMessage: "{\"id\":\"https://resourceprovider.batchai-eastus.svc/subscriptions/cb563ee9-7df0-468e-81d5-166968d1f89a/providers/Microsoft.BatchAI/locations/eastus/operationresults/dd1ac6f2-1d35-4ca6-89d8-5b0b9145b37c\",\"name\":\"dd1ac6f2-1d35-4ca6-89d8-5b0b9145b37c\",\"status\":\"Failed\",\"startTime\":\"2026-05-10T01:04:39.835Z\",\"endTime\":\"2026-05-10T01:04:51.593Z\",\"error\":{\"code\":\"OutOfCapacity\",\"message\":\"The specified Managed Compute ugmbnwpsinstance failed provisioning as Azure Machine Learning is out of capacity. Please retry later or try deploying to a different region\"}}"
+	            	[31m│[0m [0mActivity Id: ""
+	            	[31m│[0m [0m
+	            	[31m│[0m [0m---
+	            	[31m│[0m [0m
+	            	[31m│[0m [0mAPI Response:
+	            	[31m│[0m [0m
+	            	[31m│[0m [0m----[start]----
+	            	[31m│[0m [0m{
+	            	[31m│[0m [0m  "status": "Failed",
+	            	[31m│[0m [0m  "error": {
+	            	[31m│[0m [0m    "code": "BadRequest",
+	            	[31m│[0m [0m    "message": "{\"id\":\"https://resourceprovider.batchai-eastus.svc/subscriptions/cb563ee9-7df0-468e-81d5-166968d1f89a/providers/Microsoft.BatchAI/locations/eastus/operationresults/dd1ac6f2-1d35-4ca6-89d8-5b0b9145b37c\",\"name\":\"dd1ac6f2-1d35-4ca6-89d8-5b0b9145b37c\",\"status\":\"Failed\",\"startTime\":\"2026-05-10T01:04:39.835Z\",\"endTime\":\"2026-05-10T01:04:51.593Z\",\"error\":{\"code\":\"OutOfCapacity\",\"message\":\"The specified Managed Compute ugmbnwpsinstance failed provisioning as Azure Machine Learning is out of capacity. Please retry later or try deploying to a different region\"}}"
+	            	[31m│[0m [0m  }
+	            	[31m│[0m [0m}
+	            	[31m│[0m [0m-----[end]-----
+	            	[31m│[0m [0m[0m
+	            	[31m│[0m [0m
+	            	[31m│[0m [0m[0m  with azurerm_machine_learning_compute_instance.main,
+	            	[31m│[0m [0m  on compute.tf line 10, in resource "azurerm_machine_learning_compute_instance" "main":
+	            	[31m│[0m [0m  10: resource "azurerm_machine_learning_compute_instance" "main" [4m{[0m[0m
+	            	[31m│[0m [0m
+	            	[31m╵[0m[0m}
+	Test:       	Test_Quickstarts/quickstart/101-machine-learning
+
+FailNow
+
+---
+
 ## 26 Apr 26 01:07 UTC
 
 Success: false
