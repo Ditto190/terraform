@@ -1,3 +1,77 @@
+## 12 Jul 26 01:26 UTC
+
+Success: false
+
+### Versions
+
+Terraform v1.14.8
+on linux_amd64
++ provider registry.terraform.io/hashicorp/azurerm v3.117.1
++ provider registry.terraform.io/hashicorp/random v3.9.0
+
+### Error
+
+Error:
+	Error Trace:	/home/runtimeuser/go/pkg/mod/github.com/!azure/terraform-module-test-helper@v0.31.0/e2etest.go:96
+	            				/home/runtimeuser/go/pkg/mod/github.com/!azure/terraform-module-test-helper@v0.31.0/e2etest.go:59
+	            				/home/runtimeuser/go/pkg/mod/github.com/!azure/terraform-module-test-helper@v0.31.0/e2etest.go:55
+	            				/src/test/e2e/quickstart_test.go:50
+	Error:      	Received unexpected error:
+	            	terraform configuration not idempotent:[0m[1mrandom_pet.rg: Refreshing state... [id=demo-tfquickstart-akita][0m
+	            	[0m[1mdata.azurerm_subscription.current: Reading...[0m[0m
+	            	[0m[1mazurerm_resource_group.default: Refreshing state... [id=/subscriptions/cb563ee9-7df0-468e-81d5-166968d1f89a/resourceGroups/demo-tfquickstart-akita-dev-rg][0m
+	            	[0m[1mdata.azurerm_subscription.current: Read complete after 1s [id=/subscriptions/cb563ee9-7df0-468e-81d5-166968d1f89a][0m
+	            	[0m[1mazurerm_user_assigned_identity.aks: Refreshing state... [id=/subscriptions/cb563ee9-7df0-468e-81d5-166968d1f89a/resourceGroups/demo-tfquickstart-akita-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/demo-tfquickstart-akita-uai][0m
+	            	[0m[1mazurerm_container_registry.default: Refreshing state... [id=/subscriptions/cb563ee9-7df0-468e-81d5-166968d1f89a/resourceGroups/demo-tfquickstart-akita-dev-rg/providers/Microsoft.ContainerRegistry/registries/tfqdemotfquickstartakitaacr][0m
+	            	[0m[1mazurerm_role_assignment.aks_network: Refreshing state... [id=/subscriptions/cb563ee9-7df0-468e-81d5-166968d1f89a/resourceGroups/demo-tfquickstart-akita-dev-rg/providers/Microsoft.Authorization/roleAssignments/09c2f9d8-6d1b-e54b-a0d3-84e2c6c0df6b][0m
+	            	[0m[1mazurerm_role_assignment.aks_acr: Refreshing state... [id=/subscriptions/cb563ee9-7df0-468e-81d5-166968d1f89a/resourceGroups/demo-tfquickstart-akita-dev-rg/providers/Microsoft.ContainerRegistry/registries/tfqdemotfquickstartakitaacr/providers/Microsoft.Authorization/roleAssignments/0770edf3-2fcc-d6e1-b344-a8828be72cc4][0m
+	            	[0m[1mazurerm_kubernetes_cluster.default: Refreshing state... [id=/subscriptions/cb563ee9-7df0-468e-81d5-166968d1f89a/resourceGroups/demo-tfquickstart-akita-dev-rg/providers/Microsoft.ContainerService/managedClusters/demo-tfquickstart-aks][0m
+	            	
+	            	Terraform used the selected providers to generate the following execution
+	            	plan. Resource actions are indicated with the following symbols:
+	            	  [33m~[0m update in-place[0m
+	            	
+	            	Terraform will perform the following actions:
+	            	
+	            	[1m  # azurerm_kubernetes_cluster.default[0m will be updated in-place
+	            	[0m  [33m~[0m[0m resource "azurerm_kubernetes_cluster" "default" {
+	            	        id                                  = "/subscriptions/cb563ee9-7df0-468e-81d5-166968d1f89a/resourceGroups/demo-tfquickstart-akita-dev-rg/providers/Microsoft.ContainerService/managedClusters/demo-tfquickstart-aks"
+	            	        name                                = "demo-tfquickstart-aks"
+	            	      [31m-[0m[0m oidc_issuer_enabled                 = true [90m-> null[0m[0m
+	            	      [33m~[0m[0m oidc_issuer_url                     = "https://westus2.oic.prod-aks.azure.com/544a7a2e-697f-487c-b2b0-a13df7f346b6/ef8f17da-60e9-41fc-bc53-7edd451cb9fb/" -> (known after apply)
+	            	        tags                                = {}
+	            	        [90m# (34 unchanged attributes hidden)[0m[0m
+	            	
+	            	      [33m~[0m[0m default_node_pool {
+	            	            name                          = "default"
+	            	            tags                          = {}
+	            	            [90m# (33 unchanged attributes hidden)[0m[0m
+	            	
+	            	          [31m-[0m[0m upgrade_settings {
+	            	              [31m-[0m[0m drain_timeout_in_minutes      = 0 [90m-> null[0m[0m
+	            	              [31m-[0m[0m max_surge                     = "10%" [90m-> null[0m[0m
+	            	              [31m-[0m[0m node_soak_duration_in_minutes = 0 [90m-> null[0m[0m
+	            	            }
+	            	        }
+	            	
+	            	        [90m# (3 unchanged blocks hidden)[0m[0m
+	            	    }
+	            	
+	            	[1mPlan:[0m [0m0 to add, 1 to change, 0 to destroy.
+	            	[90m
+	            	─────────────────────────────────────────────────────────────────────────────[0m
+	            	
+	            	Saved the plan to:
+	            	/tmp/201-aks-acr-identity1239891742/src/quickstart/201-aks-acr-identity/tf.plan
+	            	
+	            	To perform exactly these actions, run the following command to apply:
+	            	    terraform apply "/tmp/201-aks-acr-identity1239891742/src/quickstart/201-aks-acr-identity/tf.plan"
+	Test:       	Test_Quickstarts/quickstart/201-aks-acr-identity
+
+FailNow
+
+---
+
 ## 05 Jul 26 01:08 UTC
 
 Success: false
